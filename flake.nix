@@ -9,10 +9,11 @@
       packages.${system}.default = pkgs.python3Packages.buildPythonPackage {
         pname = "auraloss";
         version = "0.1.0";
-        pyproject = true;
+        format = "setuptools";
         src = ./.;
         build-system = [ pkgs.python3Packages.setuptools ];
         dependencies = with pkgs.python3Packages; [ torch numpy ];
+        
         pythonRelaxDeps = true;
         doCheck = false;
       };
